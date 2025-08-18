@@ -39,3 +39,9 @@
     font-size: 1rem;
     margin-top: 10px;
   }
+
+  .login-link {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
