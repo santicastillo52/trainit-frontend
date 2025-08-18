@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   register(user: UserRegister){
-    return this.http.post(`${this.apiUrl}/register`, user).pipe(
+    return this.http.post(`${this.apiUrl}/auth/register`, user).pipe(
       tap(response => {
         if (response) {
           console.log('Usuario registrado');
