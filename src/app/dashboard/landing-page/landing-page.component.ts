@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../core/services/auth/auth.service';
+import { UsersListComponent } from "../../users";
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [],
+  imports: [UsersListComponent],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
