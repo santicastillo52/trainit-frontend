@@ -75,6 +75,9 @@
         <button type="submit" class="btn btn-primary" [disabled]="userForm.invalid || passwordDoNotMatch() || isSubmitting">
           {{messageButton}}
         </button>
+        <p class="login-link">
+          Si ya tienes una cuenta <a routerLink="/auth/login">Inicia Sesión Aqui</a>.
+        </p>
       </form>
     </div>
   </section>
