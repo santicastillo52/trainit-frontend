@@ -1,2 +1,15 @@
-<button type="button" class="btn btn-danger" (click)="logout()">Cerrar sesión</button>
-<app-users-list></app-users-list>
+<div class="landing-container">
+  <header class="landing-header">
+    <h1 class="welcome-title">Panel de Administración</h1>
+    <button type="button" class="btn btn-danger logout-btn" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i>
+      Cerrar sesión
+    </button>
+  </header>
+  
+  <main class="landing-main">
+    <div class="content-wrapper">
+      <app-users-list></app-users-list>
+    </div>
+  </main>
+</div>

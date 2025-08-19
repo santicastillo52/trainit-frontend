@@ -39,7 +39,8 @@ export class UsersListComponent implements OnInit, OnDestroy {
         
       },
       error: (error: any) => {
-        console.error('Error al obtener los usuarios', error);
+        this.alertService.error('Error al obtener los usuarios');
+
       }
     });
   }
@@ -63,7 +64,7 @@ export class UsersListComponent implements OnInit, OnDestroy {
             this.getUsers();
           },
           error: (error: any) => {
-            console.error('Error al eliminar el usuario', error);
+            this.alertService.error('Error al eliminar el usuario');
           }
         })
       }
