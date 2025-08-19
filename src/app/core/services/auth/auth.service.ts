@@ -26,7 +26,7 @@ export class AuthService {
           localStorage.setItem('user', JSON.stringify(response.user));
           localStorage.setItem('userId', response.user.id);
           
-         
+
           this.isLoggedInSubject.next(true);
         }
       })
@@ -52,10 +52,22 @@ export class AuthService {
   }
 
   logout(): void {
+    this.http.post(`${this.apiUrl}/auth/logout`, {}).subscribe({
+      next: () => {
+
+        this.cleanupLocalStorage();
+      },
+      error: (error) => {
+
+        this.cleanupLocalStorage();
+      }
+    });
+  }
+  
+  private cleanupLocalStorage(): void {
     localStorage.removeItem('token'); 
     localStorage.removeItem('user');
-    this.isLoggedInSubject.next(false); 
-
+    this.isLoggedInSubject.next(false);
   }
 
 
