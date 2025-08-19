@@ -3,12 +3,13 @@ import { inject, Injectable } from '@angular/core';
 import { BehaviorSubject, tap } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
 import { UserRegister } from '../../models/user.model';
+import { environment } from '../../../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3000'; 
+  private apiUrl = environment.apiUrl;
   
   //Sirve para saber si el usuario esta logeado
   private isLoggedInSubject = new BehaviorSubject<boolean>(this.hasToken());
